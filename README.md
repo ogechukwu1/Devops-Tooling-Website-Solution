@@ -35,7 +35,7 @@ __Webserver Linux:__ Red Hat Enterprise Linux 8
 
 __Database Server:__ Ubuntu 20.04 + MySQL
 
-__Storage Server:__ Red Hat Enterprise Linux 8 + NFS Server
+__Storage Server:__ Red Hat Enterprise Linux 8 + NFS Server 
 
 __Programming Language:__ PHP
 
@@ -339,7 +339,7 @@ Result:
 ![](./images/25.png)
 
 
-The command `sudo ls -larth /mnt` is used to list the contents of the /mnt directory, including hidden files and directories, in reverse order of modification time, with timestamps, and in a long format and print sizes in a human-readable format. 
+The command `sudo ls -larth /mnt` is used to list the contents of the __/mnt__ directory, including hidden files and directories, in reverse order of modification time, with timestamps, and in a long format and print sizes in a human-readable format. 
 
 
 __ls:__ This is the command used to list files and directories.
@@ -503,7 +503,7 @@ __Step 4: Prepare the Web Servers__
 
 
 
-In this step, we will be launching three web servers. We need to make sure that the web servers can serve the same content from shared storage solutions, which in this case are the MySQL database and NFS server.
+In this step, we will be launching three web servers. We need to make sure that the web servers can serve the same content from shared storage solutions, which in this case are the __MySQL database__ and __NFS server.__
 
 For storing shared files that our Web Servers will use, we will utilize NFS and mount previously created logical Volume `lv-apps` to the folder where Apache stores files to be served to the users `(/var/www).`
 
@@ -562,7 +562,7 @@ Result:
 
 ![](./images/41.png)
 
-5. intsall [Remi's repository](https://www.subhosting.net/kb/how-to-enable-remi-repo-on-centos/), Apache and PHP.
+5. install [Remi's repository](https://www.subhosting.net/kb/how-to-enable-remi-repo-on-centos/), Apache and PHP.
 
 
 `sudo yum install httpd -y`
@@ -744,7 +744,7 @@ Results:
  `sudo vi /etc/sysconfig/selinux` 
  
   Set `SELINUX=disabled`
-  
+   
 Result:
 
 ![](./images/61.png)
@@ -788,9 +788,9 @@ Result:
 6. Create in MySQL a new admin user with the username: myuser and password: password:
 
 
-- Change to the Devops_tooling directory
+- Change to the tooling directory
 
-- Ensure MySQL client is installed (sudo yum install mysql)
+- Ensure MySQL client is installed `(sudo yum install mysql-server)`
 
 - Connect to the mySQL server from the webserver using the 'webaccess' user created earlier and the private IP of the DB server.
 
@@ -824,7 +824,7 @@ Result:
 ![](./images/69.png)
 
 
-We should be able to loging using our username and password as both. If we are unable to log in, we should check our connection to the database.
+We should be able to login using our username and password as both. If we are unable to log in, we should check our connection to the database.
 
 
 ![](./images/70.png)
